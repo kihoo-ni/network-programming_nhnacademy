@@ -1,0 +1,51 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Main",
+            "projectName": "regexdemo",
+            "args": [
+                "nhn",
+                "123"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main2",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Main2",
+            "projectName": "regexdemo",
+            "args": [
+                "-classpath",
+                "./src/lib;./src/modules",
+                "-m",
+                "slf4j",
+                "./src/main/java/Main.java"
+            ]
+        },
+
+        {
+            "type": "java",
+            "name": "Main3",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Main3",
+            "projectName": "regexdemo",
+            "args": [
+                "-classpath",
+                "./src/lib;./src/modules",
+                "-m",
+                "slf4j",
+                "./src/main/java/Main.java"
+            ]
+        }
+    ]
+}
