@@ -3,6 +3,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Jasonpractice8",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jasonpractice8",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice7",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice7",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice6",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice6",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice5",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice5",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice4",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice4",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice3",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice3",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice1",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice1",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice2",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice2",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "jsonpractice1",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.jsonpractice1",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "com.nhnacademy.Main",
@@ -32,7 +95,6 @@
                 "./src/main/java/Main.java"
             ]
         },
-
         {
             "type": "java",
             "name": "Main3",
@@ -44,6 +106,10 @@
                 "./src/lib;./src/modules",
                 "-m",
                 "slf4j",
+                "-g",
+                "what?",
+                "--version",
+                "7.7",
                 "./src/main/java/Main.java"
             ]
         }

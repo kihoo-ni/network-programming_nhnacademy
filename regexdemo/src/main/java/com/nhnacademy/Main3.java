@@ -3,6 +3,7 @@ package com.nhnacademy;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
@@ -10,7 +11,7 @@ import org.apache.commons.cli.ParseException;
 public class Main3 {
 
     public static void main(String[] args) throws ParseException {
-        Options options = new Options();
+         Options options = new Options();
 
         Option classPath = Option.builder("classpath").longOpt("class-path").hasArg().desc("Class Path").build();
 
@@ -20,10 +21,10 @@ public class Main3 {
 
         options.addOption(module);
 
-        Option group=Option.builder("g").desc("Global").build();
+        Option group=Option.builder("g").hasArg().desc("Global").build();
         options.addOption(group);
 
-        Option version = Option.builder("v").longOpt("version").desc("Version").build();
+        Option version = Option.builder("v").hasArg().longOpt("version").desc("Version").build();
 
         options.addOption(version);
 
@@ -36,18 +37,23 @@ public class Main3 {
         }
 
         if(cmd.hasOption(module.getOpt())){
-            System.out.println("Module : "+module.getOpt());
+            System.out.println("Module : "+cmd.getOptionValue(module.getOpt()));
         }
 
         if(cmd.hasOption(group.getOpt())){
-            System.out.println("Group : ");
+            System.out.println("Group : "+cmd.getOptionValue(group.getOpt()));
         }
 
         if(cmd.hasOption(version.getOpt())){
-            System.out.println("Version : ");
+            System.out.println("Version : "+cmd.getOptionValue(version.getOpt()));
         }
 
-        System.out.println(cmd.getArgList());
+
+        HelpFormatter formatter = new HelpFormatter();
+
+        formatter.printHelp( "ant", options ); 
+
+
 
     }
 
