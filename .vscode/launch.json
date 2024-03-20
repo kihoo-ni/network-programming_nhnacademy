@@ -3,6 +3,80 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Exam06_1",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam06_1",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam06",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam06",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam07",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam07",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Quiz06",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Quiz06",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Quiz05",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Quiz05",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam05",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam05",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam03",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam03",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam02",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam02",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam01",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam01",
+            "projectName": "socket",
+            "args": [
+                "1",
+                "100000"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Main",
+            "projectName": "recorder"
+        },
+        {
+            "type": "java",
             "name": "Jasonpractice8",
             "request": "launch",
             "mainClass": "com.nhnacademy.Jasonpractice8",
