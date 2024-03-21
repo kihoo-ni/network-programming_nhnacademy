@@ -5,7 +5,7 @@ import java.io.Console;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Jasonpractice8 {
+public class Jsonpractice8 {
     public static void main(String[] args) {
         JSONArray userArray = new JSONArray();
 

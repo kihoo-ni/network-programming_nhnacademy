@@ -21,12 +21,12 @@ public class Main {
         JSONArray userArray = new JSONArray();
 
         // 옵션 생성
-        // 실제 실행할떄는 - 붙혀서 하자! 
+        // 실제 실행할떄는 - 붙혀서 하자!
         Options options = new Options();
         Option helpOption = new Option("h", "help", false, "Help");
         Option dbOption = new Option("f", "dbfile", true, "save DB file");
         Option addOption = new Option("a", "add", false, "add Data");
-        Option addType = new Option("t", "type", true, "select data type");
+        Option addId = new Option("i", "id", true, "select data id");
         Option addName = new Option("n", "name", true, "select name");
         Option addList = new Option("l", "list", false, "list data");
 
@@ -34,7 +34,7 @@ public class Main {
         options.addOption(helpOption);
         options.addOption(dbOption);
         options.addOption(addOption);
-        options.addOption(addType);
+        options.addOption(addId);
         options.addOption(addName);
         options.addOption(addList);
 
@@ -48,58 +48,76 @@ public class Main {
             if (commandLine.hasOption(helpOption.getOpt())) {
                 HelpFormatter formatter = new HelpFormatter();
                 formatter.printHelp("recoder", options);
+            }
+            // 추가 옵션
+            if (commandLine.hasOption(addOption.getOpt())) {
+                JSONObject userObject = new JSONObject();
+                // 아이디
+                if (commandLine.hasOption(addId.getOpt())) {
+                    System.out.println("아이디 추가!");
+                    userObject.put("ID", commandLine.getOptionValue(addId.getOpt()));
+                } else {
+                    throw new NullPointerException();
+                }
 
-                // 저장 옵션
-            } else if (commandLine.hasOption(dbOption.getOpt())) {
+                // 이름
+                if (commandLine.hasOption(addName.getOpt())) {
+                    System.out.println("이름 추가");
+                    userObject.put("NAME", commandLine.getOptionValue(addName.getOpt()));
+                    userArray.put(userObject);
+                } else {
+                    throw new NullPointerException();
+                }
 
-                String filePath = commandLine.getOptionValue(dbOption.getOpt());
+                // 저장옵션
+                if (commandLine.hasOption(dbOption.getOpt())) {
+
+                    // 읽기 옵션
+                    System.out.println("파일읽어보자!");
+                    String filePath = commandLine.getOptionValue(dbOption.getOpt());
+
+                    try (FileWriter writer = new FileWriter(filePath)) {
+                        writer.write(userObject.toString());
+                        System.out.println("파일저장 성공");
+                    } catch (Exception e) {
+                        System.out.println("파일저장 실패 : " + e.getMessage());
+                    }
+                }
+            }
+
+            // 리스트 열거옵션
+            if (commandLine.hasOption(addList.getOpt())) {
+                System.out.println("열거해보기");
+                // 읽기 옵션
+                if (commandLine.hasOption(dbOption.getOpt())) {
+                    System.out.println("파일읽어보자!");
+                    String filePath = commandLine.getOptionValue(dbOption.getOpt());
 
                     try {
                         String jsonData = Files.readString(Paths.get(filePath));
-                     userArray.putAll(jsonData);
-                        System.out.println(jsonData);
+                        JSONObject newObject=new JSONObject(jsonData);
+                        
+                    
                     } catch (IOException e) {
                         e.printStackTrace();
                         System.out.println("db 읽기 실패");
                     }
-
-                try (FileWriter writer = new FileWriter(filePath)) {
-                    writer.write(userArray.toString());
-                    System.out.println("파일저장 성공");
-                } catch (Exception e) {
-                    System.out.println("파일저장 실패 : " + e.getMessage());
                 }
-
-                // 추가 옵션
-            } else if (commandLine.hasOption(addOption.getOpt())) {
-                JSONObject userObject = new JSONObject();
-                if (commandLine.hasOption(addType.getOpt())) {
-                    userObject.put("TYPE", commandLine.getOptionValue(addType.getOpt()));
-                } else {
-                    throw new NullPointerException();
-                }
-                if (commandLine.hasOption(addName.getOpt())) {
-                    userObject.put("NAME", commandLine.getOptionValue(addName.getOpt()));
-                } else {
-                    throw new NullPointerException();
-                }
-                userArray.put(userObject);
-
-                // 리스트 열거옵션
-            } else if (commandLine.hasOption(addList.getOpt())) {
 
                 System.out.println("ID      NAME");
-                if (commandLine.hasOption(addType.getOpt())) {
 
-                    for (int i = 0; i < userArray.length(); i++) {
-                        JSONObject userObject = userArray.getJSONObject(i);
-                        if (userObject.getString("TYPE").equals(commandLine.getOptionValue(addType.getOpt()))) {
-                            System.out.println(userObject.getString("TYPE") + "      " + userObject.getString("NAME"));
-                        }
+                for (int i = 0; i < userArray.length(); i++) {
+                    JSONObject userObject = userArray.getJSONObject(i);
+                    if (userObject.getString("ID").equals(commandLine.getOptionValue(addId.getOpt()))) {
+                        System.out.println(userObject.getString("ID") + "      " + userObject.getString("NAME"));
                     }
                 }
+
             }
-        } catch (ParseException e) {
+
+        } catch (
+
+        ParseException e) {
             System.err.println(e.getMessage());
             System.exit(0);
         }

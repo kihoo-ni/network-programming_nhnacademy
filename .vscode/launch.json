@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ssem",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Ssem",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Jsonpractice8",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Jsonpractice8",
+            "projectName": "jsonpractice"
+        },
+        {
+            "type": "java",
+            "name": "ServerSocket02",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.ServerSocket02",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "ServerSocket01",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.ServerSocket01",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
             "name": "Exam06_1",
             "request": "launch",
             "mainClass": "com.nhnacademy.Exam06_1",
