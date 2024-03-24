@@ -1,0 +1,145 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.test",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BingoGame",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.BingoGame",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam01",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam01",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam02",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam02",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam03",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam03",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam04",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam04",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam05",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam05",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam06",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam06",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam06_1",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam06_1",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Exam07",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Exam07",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "Quiz06",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Quiz06",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "ServerSocket01",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.ServerSocket01",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "ServerSocket02",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.ServerSocket02",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "SimpleNC",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.SimpleNC",
+            "projectName": "socket",
+            "args": [
+                "-l",
+                "1234"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Snc",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Snc",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
+            "name": "client1",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.SimpleNC",
+            "projectName": "socket",
+            "args": [
+                "localhost",
+                "1234"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "client2",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.SimpleNC",
+            "projectName": "socket",
+            "args": [
+                "localhost",
+                "1234"
+            ]
+        }
+    ]
+}
