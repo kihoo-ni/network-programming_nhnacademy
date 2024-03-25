@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FullVersionNC",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.FullVersionNC",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
             "name": "test",
             "request": "launch",
             "mainClass": "com.nhnacademy.test",
@@ -139,6 +146,36 @@
             "args": [
                 "localhost",
                 "1234"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "newclient1",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.FullVersionNC",
+            "projectName": "socket",
+            "args": [
+                "client"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "newclient2",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.FullVersionNC",
+            "projectName": "socket",
+            "args": [
+                "client"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "newserver",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.FullVersionNC",
+            "projectName": "socket",
+            "args": [
+                "server"
             ]
         }
     ]
