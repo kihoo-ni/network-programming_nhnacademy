@@ -58,19 +58,20 @@ public class BingoGame {
             System.out.println(computerBingo.showMeTheBingo());
             System.out.println("_____");
 
-            myBingo.bingoIsFull(myBingo);
+            Bingo.stopCheckBingo = Bingo.bingoIsFull();
+            if (Bingo.stopCheckBingo) {
+                // 컴퓨터 빙고 숫자고르기 + 유저빙고도 숫자 골라짐 if 컴퓨터 판에 해당 숫자 없을 경우 패스
+                computerBingo.checkBingoNumber(myBingo, true);
+                System.out.println("_____");
+                System.out.println("유저 빙고");
+                System.out.println(myBingo.showMeTheBingo());
+                System.out.println("_____");
+                System.out.println("컴퓨터 빙고");
+                System.out.println(computerBingo.showMeTheBingo());
+                System.out.println("_____");
 
-            // 컴퓨터 빙고 숫자고르기 + 유저빙고도 숫자 골라짐 if 컴퓨터 판에 해당 숫자 없을 경우 패스
-            computerBingo.checkBingoNumber(myBingo, true);
-            System.out.println("_____");
-            System.out.println("유저 빙고");
-            System.out.println(myBingo.showMeTheBingo());
-            System.out.println("_____");
-            System.out.println("컴퓨터 빙고");
-            System.out.println(computerBingo.showMeTheBingo());
-            System.out.println("_____");
-
-            computerBingo.bingoIsFull(computerBingo);
+                Bingo.stopCheckBingo = Bingo.bingoIsFull();
+            }
         }
 
         scanner.close();
@@ -84,13 +85,15 @@ public class BingoGame {
             System.out.println("++++++++++");
             System.out.println("나의 승리!");
             System.out.println("++++++++++");
-            return;
+        } else if (myBingo.returnBingoCount() == computerBingo.returnBingoCount()) {
+            System.out.println("++++++++++");
+            System.out.println("무승부! ");
+            System.out.println("++++++++++");
+
         } else {
             System.out.println("++++++++++");
             System.out.println("컴퓨터 승리! ");
             System.out.println("++++++++++");
-            return;
-
         }
 
     }

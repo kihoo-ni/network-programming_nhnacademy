@@ -1,5 +1,6 @@
 package com.nhnacademy;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Bingo {
@@ -8,7 +9,7 @@ public class Bingo {
     public static int bingoLineNumber;
     public static String[] checkNumArray;
     Scanner scanner = new Scanner(System.in);
-    public static boolean stopCheckBingo = true;
+    public static boolean stopCheckBingo;
 
     public Bingo(int bingoLineNumber) {
         this.bingoLineNumber = bingoLineNumber;
@@ -94,7 +95,7 @@ public class Bingo {
         return bingoArray;
     }
 
-    public void checkBingoNumber(Bingo otherBingo, boolean computer) {
+    public  void  checkBingoNumber(Bingo otherBingo, boolean computer) {
         boolean isComputer = computer;
 
         if (!isComputer) {
@@ -126,18 +127,29 @@ public class Bingo {
             }
 
         } else {
-            int randomComNum = (int) (Math.random() * (bingoLineNumber * bingoLineNumber)) + 1;
-            String randomComStr = Integer.toString(randomComNum);
+            Random random = new Random();
+            String randomNullEquals="";
+            int randomNumArr=random.nextInt(bingoLineNumber*bingoLineNumber);
+            String randomNumArray=checkNumArray[randomNumArr];
 
-            loop: for (int i = 0; i < bingoLineNumber * bingoLineNumber; i++) {
-                while (randomComStr.equals(checkNumArray[i])) {
-                    checkNumArray[i] = null;
-                    break loop;
+            while(true){
+
+                if(randomNumArray==null){
+                    randomNumArr=random.nextInt(bingoLineNumber*bingoLineNumber);
+                    randomNumArray=checkNumArray[randomNumArr];
+    
+                } else {
+                    randomNullEquals=randomNumArray;
+                    checkNumArray[randomNumArr]=null;
+                    randomNumArray=null;
+                    break;
                 }
+               
             }
+
             loop: for (int i = 0; i < bingoLineNumber; i++) {
                 for (int j = 0; j < bingoLineNumber; j++) {
-                    if (randomComStr.equals(bingo[i][j]) && (!bingo[i][j].equals("O"))
+                    if (randomNullEquals.equals(bingo[i][j]) && (!bingo[i][j].equals("O"))
                             && (!bingo[i][j].equals("X"))) {
                         bingo[i][j] = "X";
                         break loop;
@@ -146,7 +158,7 @@ public class Bingo {
             }
             loop: for (int i = 0; i < bingoLineNumber; i++) {
                 for (int j = 0; j < bingoLineNumber; j++) {
-                    if (randomComStr.equals(otherBingo.bingo[i][j]) && (!otherBingo.bingo[i][j].equals("O"))
+                    if (randomNullEquals.equals(otherBingo.bingo[i][j]) && (!otherBingo.bingo[i][j].equals("O"))
                             && (!otherBingo.bingo[i][j].equals("X"))) {
                         otherBingo.bingo[i][j] = "X";
                         break loop;
@@ -159,20 +171,22 @@ public class Bingo {
 
     }
 
-    public void bingoIsFull(Bingo bingo){
-        loop:
-        for(int i=0; i<bingoLineNumber; i++){
-            for(int j=0; j<bingoLineNumber; j++){
-                if(!bingo.bingo[i][j].equals("O") || !bingo.bingo[i][j].equals("X")){
-                    break loop;
-                } 
-                if(bingo.bingo[bingoLineNumber-1][bingoLineNumber-1].equals("O")|| bingo.bingo[bingoLineNumber-1][bingoLineNumber-1].equals("X")){
-                    stopCheckBingo=false;
-                    break loop;
-                }
+    public static boolean bingoIsFull(){
+            int numcount=0;
+        for(int i=0; i<bingoLineNumber*bingoLineNumber; i++){
+            
+            if(checkNumArray[i]==null){
+                numcount++;
+            }
+            
+        }
 
-
-            } 
+        if(numcount==bingoLineNumber*bingoLineNumber){
+            System.out.println("넘어가라!!");
+            return false;
+        } else {
+            System.out.println("넘어가라2!!");
+            return true;
         }
     }
 
