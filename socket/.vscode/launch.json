@@ -152,7 +152,7 @@
             "type": "java",
             "name": "newclient1",
             "request": "launch",
-            "mainClass": "com.nhnacademy.FullVersionNC",
+            "mainClass": "com.nhnacademy.newVersionNC",
             "projectName": "socket",
             "args": [
                 "client"
@@ -162,7 +162,7 @@
             "type": "java",
             "name": "newclient2",
             "request": "launch",
-            "mainClass": "com.nhnacademy.FullVersionNC",
+            "mainClass": "com.nhnacademy.newVersionNC",
             "projectName": "socket",
             "args": [
                 "client"
@@ -172,7 +172,7 @@
             "type": "java",
             "name": "newserver",
             "request": "launch",
-            "mainClass": "com.nhnacademy.FullVersionNC",
+            "mainClass": "com.nhnacademy.newVersionNC",
             "projectName": "socket",
             "args": [
                 "server"

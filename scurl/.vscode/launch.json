@@ -14,7 +14,10 @@
             "mainClass": "com.nhnacademy.Main",
             "projectName": "scurl",
             "args": [
-                "httpbin.org"
+                "-v",
+                "-H",
+                "X-Custom-Header: NA",
+                "http://httpbin.org/get"
             ]
         },
         {
@@ -25,16 +28,14 @@
             "projectName": "scurl",
             "args": [
                 "-X",
-                "GET",
-                "httpbin.org"
+                "POST",
+                "-v",
+                "-d",
+                "{\"hello\": \"world\"}",
+                "-H",
+                "Content-Type: application/json",
+                "http://httpbin.org/post"
             ]
-        },
-        {
-            "type": "java",
-            "name": "Main3",
-            "request": "launch",
-            "mainClass": "com.nhnacademy.Main",
-            "projectName": "scurl"
         }
     ]
 }

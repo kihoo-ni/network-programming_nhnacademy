@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Snc",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.Snc",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
             "name": "SimpleNC",
             "request": "launch",
             "mainClass": "com.nhnacademy.SimpleNC",
