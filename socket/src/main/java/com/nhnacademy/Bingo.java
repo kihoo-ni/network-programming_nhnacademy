@@ -95,7 +95,7 @@ public class Bingo {
         return bingoArray;
     }
 
-    public  void  checkBingoNumber(Bingo otherBingo, boolean computer) {
+    public void checkBingoNumber(Bingo otherBingo, boolean computer) {
         boolean isComputer = computer;
 
         if (!isComputer) {
@@ -128,23 +128,23 @@ public class Bingo {
 
         } else {
             Random random = new Random();
-            String randomNullEquals="";
-            int randomNumArr=random.nextInt(bingoLineNumber*bingoLineNumber);
-            String randomNumArray=checkNumArray[randomNumArr];
+            String randomNullEquals = "";
+            int randomNumArr = random.nextInt(bingoLineNumber * bingoLineNumber);
+            String randomNumArray = checkNumArray[randomNumArr];
 
-            while(true){
+            while (true) {
 
-                if(randomNumArray==null){
-                    randomNumArr=random.nextInt(bingoLineNumber*bingoLineNumber);
-                    randomNumArray=checkNumArray[randomNumArr];
-    
+                if (randomNumArray == null) {
+                    randomNumArr = random.nextInt(bingoLineNumber * bingoLineNumber);
+                    randomNumArray = checkNumArray[randomNumArr];
+
                 } else {
-                    randomNullEquals=randomNumArray;
-                    checkNumArray[randomNumArr]=null;
-                    randomNumArray=null;
+                    randomNullEquals = randomNumArray;
+                    checkNumArray[randomNumArr] = null;
+                    randomNumArray = null;
                     break;
                 }
-               
+
             }
 
             loop: for (int i = 0; i < bingoLineNumber; i++) {
@@ -171,21 +171,19 @@ public class Bingo {
 
     }
 
-    public static boolean bingoIsFull(){
-            int numcount=0;
-        for(int i=0; i<bingoLineNumber*bingoLineNumber; i++){
-            
-            if(checkNumArray[i]==null){
+    public static boolean bingoIsFull() {
+        int numcount = 0;
+        for (int i = 0; i < bingoLineNumber * bingoLineNumber; i++) {
+
+            if (checkNumArray[i] == null) {
                 numcount++;
             }
-            
+
         }
 
-        if(numcount==bingoLineNumber*bingoLineNumber){
-            System.out.println("넘어가라!!");
+        if (numcount == bingoLineNumber * bingoLineNumber) {
             return false;
         } else {
-            System.out.println("넘어가라2!!");
             return true;
         }
     }
@@ -203,35 +201,27 @@ public class Bingo {
         if (diagonalCountBingo == bingoLineNumber) {
             bingoCount += 1;
         }
+
         for (int i = 0; i < bingoLineNumber; i++) {
+            horizontalCountBingo = 0;
+            verticalCountBingo = 0;
 
             for (int k = 0; k < bingoLineNumber; k++) {
                 if (bingo[i][k].equals(bingoSymbol)) {
                     horizontalCountBingo += 1;
-
-                    if (k == bingoLineNumber - 1 && (horizontalCountBingo % bingoLineNumber) == 0) {
-                        bingoCount += 1;
-                    } else if (k == bingoLineNumber - 1) {
-                        horizontalCountBingo = 0;
-                    }
                 }
-            }
-
-        }
-
-        for (int k = 0; k < bingoLineNumber; k++) {
-            for (int i = 0; i < bingoLineNumber; i++) {
-                if (bingo[i][k].equals(bingoSymbol)) {
+                if (bingo[k][i].equals(bingoSymbol)) {
                     verticalCountBingo += 1;
-                    if (i == bingoLineNumber - 1 && (verticalCountBingo % bingoLineNumber) == 0) {
-                        bingoCount += 1;
-                    } else if (k == bingoLineNumber - 1) {
-                        verticalCountBingo = 0;
-                    }
                 }
             }
-        }
 
+            if (horizontalCountBingo == bingoLineNumber) {
+                bingoCount += 1;
+            }
+            if (verticalCountBingo == bingoLineNumber) {
+                bingoCount += 1;
+            }
+        }
     }
 
     public int returnBingoCount() {

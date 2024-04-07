@@ -77,19 +77,15 @@ public class BingoGame {
         scanner.close();
         // 빙고 카운트 체크
         myBingo.detectBingo("O");
-
         computerBingo.detectBingo("X");
+        System.out.println("마이빙고 : " + myBingo.returnBingoCount());
+        System.out.println("컴퓨터빙고 : " + computerBingo.returnBingoCount());
 
         // 모든 선수의 빙고판이 다 채워졌는지 확인하고 bingo 카운트해서 가장 많이 빙고 가지고 있으면 승리
-        if (myBingo.returnBingoCount() > computerBingo.returnBingoCount()) {
+        if (myBingo.returnBingoCount() >= computerBingo.returnBingoCount()) {
             System.out.println("++++++++++");
             System.out.println("나의 승리!");
             System.out.println("++++++++++");
-        } else if (myBingo.returnBingoCount() == computerBingo.returnBingoCount()) {
-            System.out.println("++++++++++");
-            System.out.println("무승부! ");
-            System.out.println("++++++++++");
-
         } else {
             System.out.println("++++++++++");
             System.out.println("컴퓨터 승리! ");

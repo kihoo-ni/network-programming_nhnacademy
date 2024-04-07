@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BingoGame",
+            "request": "launch",
+            "mainClass": "com.nhnacademy.BingoGame",
+            "projectName": "socket"
+        },
+        {
+            "type": "java",
             "name": "Snc",
             "request": "launch",
             "mainClass": "com.nhnacademy.Snc",
